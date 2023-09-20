@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ritzpa Stock Exchange</title>
+    <script src="../../jquery-2.0.3.min.js"></script>
+    <script src="../../utilsUI/contextPathHelper.js"></script>
+    <script src="../adminHomePage/adminHomePage.js"></script>
+    <link rel="stylesheet" href="adminHomePage.css">
+</head>
+
+<body>
+
+<div class="grid-container">
+
+     <!--------------- HEADER ------------------>
+    <span id="header">
+        <div class="mainTitle">
+      <h1 id="mainTitle">Welcome Tom</h1>
+    </div>
+        <div id="digitalClock"></div>
+    </span>
+    <!------------------------------------------>
+
+    <!------------ ONLINE USERS ---------------->
+        <div class="onlineUsersContainer">
+
+            <h2 class="opTitle">Online Users</h2>
+
+            <div id="usersListDiv">
+                <ul id="usersList"></ul>
+            </div>
+
+        </div>
+    <!------------------------------------------>
+
+    <!------------ CHAT CONTAINER -------------->
+        <div class="chatContainer">
+
+            <div id="chatTitleContainer">
+                <h4 id="chatTitle">Chat</h4>
+            </div>
+
+            <div id="chatarea" ></div>
+
+            <form id="chatform" method="POST" action="sendChat">
+                <input type="text" id="userstring" name="chatString"/>
+                <input type="submit" value="Send"/>
+            </form>
+        </div>
+    <!------------------------------------------>
+
+    <!------------ STOCKS CONTAINER -------------->
+        <div class="stocksContainer">
+            <div id="stocksTitleContainer">
+                <h2 class="opTitle">Stocks Information</h2>
+            </div>
+
+            <div id="stocksListDiv">
+                <ul id="stocksList"></ul>
+            </div>
+        </div>
+    <!------------------------------------------>
+</div>
+</body>
+</html>

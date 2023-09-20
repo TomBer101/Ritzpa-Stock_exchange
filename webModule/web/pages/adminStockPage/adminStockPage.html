@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Ritzpa Stock Exchange</title>
+  <script src="../../jquery-2.0.3.min.js"></script>
+  <script src="../../utilsUI/contextPathHelper.js"></script>
+  <script src="adminStockPage.js"></script>
+  <script src="../brokerStockPage/canvasjs.min.js"></script>
+  <link rel="stylesheet" href="adminStockPage.css">
+</head>
+
+<body>
+
+<div class="grid-container">
+  <!--------------- HEADER -------------------------------------------------->
+
+  <span id="header">
+        <div class="mainTitle">
+      <h1 id="mainTitle">GGL Data:</h1>
+    </div>
+        <div id="digitalClock"></div>
+  </span>
+  <!------------------------------------------------------------------------->
+
+  <!---------------- STOCK DATA --------------------------------------------->
+    <div class="stockData" id="symbolContainer">Symbol: GGL</div>
+    <div class="stockData" id="companyNameContainer">Company Name: Google</div>
+    <div class="stockData" id="valueContainer">Value: 100</div>
+    <div class="stockData" id="cycleContainer">Cycle: 200</div>
+  <!------------------------------------------------------------------------->
+
+  <!-------------------- SELL COMMANDS -------------------------------------->
+  <div class="sellCommandsContainer">
+    <h2>Waiting sell commands: </h2>
+    <div id="sellCommandsListContainer">
+    </div>
+  </div>
+  <!------------------------------------------------------------------------->
+
+  <!------------------ TRANSACTION HISTORY CONTAINER ------------------------>
+  <div class="transactionHistoryContainer">
+    <table id="transactionHistory">
+      <thead id="tHead">
+      <tr>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Value</th>
+      </tr>
+      </thead>
+      <tbody id="transactionHistoryTb"></tbody>
+    </table>
+  </div>
+
+  <!------------------------ CHART CONTAINER -------------------------------->
+  <div id="stockChartHolder"></div>
+  <!------------------------------------------------------------------------->
+
+  <!-------------------- BUY COMMANDS --------------------------------------->
+  <div class="buyCommandsContainer">
+    <h2>Waiting buy commands: </h2>
+    <div id="buyCommandsListContainer">
+    </div>
+  </div>
+  <!------------------------------------------------------------------------->
+
+  <!-------------------- BACK BUTTON ---------------------------------------->
+  <div class="backBtnContainer">
+    <form>
+      <input type="button" value="Go back!" onclick="window.location.replace('/webModule_Web_exploded/pages/adminHomePage/adminHomePage.html');">
+    </form>
+  </div>
+  <!------------------------------------------------------------------------->
+
+</div>
+</body>
+</html>

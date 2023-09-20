@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Ritzpa Stock Exchange</title>
+
+  <script src="../../jquery-2.0.3.min.js"></script>
+  <script src="../../utilsUI/contextPathHelper.js"></script>
+  <script src="brokerHomePage.js"></script>
+
+  <link rel="stylesheet" href="brokerHomePage2.css">
+</head>
+
+<body class>
+
+<div class="grid-container">
+
+  <span id="header">
+        <div class="mainTitle">
+      <h1 id="mainTitle">Welcome Tom</h1>
+    </div>
+        <div id="digitalClock"></div>
+  </span>
+
+    <div id="onlineUsersContainer" class="onlineUsers split">
+      <h2 class="opTitle">Online Users</h2>
+        <div id="usersListDiv">
+            <ul id="usersList"></ul>
+        </div>
+    </div>
+
+    <div  class="chatContainer split">
+
+      <div id="chatTitleContainer">
+        <h4 id="chatTitle">Chat</h4>
+      </div>
+
+      <div id="chatarea"></div>
+
+     <div class="col-xs-4">
+        <form id="chatform" method="POST" action="sendChat">
+          <input type="text" id="userstring" name="chatString"/>
+          <input type="submit" value="Send"/>
+      </form>
+    </div>
+  </div>
+
+      <div  class="forms" >
+          <span id="currency">
+              <label>Current Currency: </label>
+              <label id="currentCurrency"></label>
+          </span>
+        <form id="chargeMoney" method="POST" action="chargeMoney" >
+          <input type="number" id="moneyAmount" name="moneyAmount" min="0" required/>
+          <input type="submit" value="load $"/>
+        </form>
+
+          <br>
+          <div class="buttonBlock" style="display: inline-flex">
+          <button class="inner" type="button" id="loadFileBtn" onclick="document.getElementById('uploadFileHolder').style.display='block'">Load File</button>
+          <button class="inner" type="button" id="issueStock" onclick="document.getElementById('issueStockHolder').style.display='block'">Issue</button>
+          </div>
+          <br>
+
+          <div id="uploadFileHolder" style="display:none" class="upload">
+              <form id="uploadFileForm" action="uploadFile" method="POST" enctype="multipart/form-data">
+                  <input type="file"  name="myFile" accept=".xml" required><br>
+                  <input type="Submit" value="Upload File"><br>
+                  <button type="button" onclick= "document.getElementById('uploadFileHolder').style.display='none'">Cancel</button>
+              </form>
+          </div>
+          <div id="error-holder"></div>
+      </div>
+
+    <div class="issue" id="issueStockHolder" style="display:none">
+        <form id="issueStockForm" method = "POST" action="IssueStock">
+            <label class="lbl">Company name: </label>
+            <input type="text" name="companyName" id="companyName" required/><br>
+            <label class="lbl">Symbol: </label>
+            <input type="text" name="symbol" id="symbol" required/><br>
+            <label class="lbl">Stocks amount: </label>
+            <input type="number" name="stocksAmount" id="stocksAmount" min="1" required/><br>
+            <label class="lbl">Company value: </label>
+            <input type="number" name="companyValue" id="companyValue" min="0" required/>
+            <button type="button" onclick= "document.getElementById('issueStockHolder').style.display='none'">Cancel</button>
+            <input type="submit" value="Issue"/>
+        </form><br>
+    </div>
+
+      <div  class="history">
+        <table id="userHistory" class="myHistory">
+            <thead>
+              <tr>
+                  <th>Type</th> <!-- buy/sell/load money-->
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>currency Before</th>
+                  <th>currency After</th>
+                  <th>symbol</th>
+              </tr>
+            </thead>
+            <tbody id="userHistoryTb"></tbody>
+        </table>
+      </div>
+
+        <div id="stocksContainer" class="stocksInf">
+          <h2 class="opTitle">Stocks Information</h2>
+            <div id="stocksListDiv">
+                <ul id="stocksList">
+                    <!-- each stock is gonna have an HREF to a more informative page about the stock-->
+                </ul>
+            </div>
+        </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Ritzpa Stock Exchange</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="jquery-2.0.3.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="login">
+            <h1>Welcome to R$E</h1>
+
+            <form id="loginForm" action="logIn">
+                <p></p><input type="text" id="userNameTF" name="username" placeholder="Username" style='padding: 5px;' required="required" /></p>
+
+                <input type="radio" id="bRadio" class="radio" name="type" value="broker" required>
+                <label class="lbl">Broker</label>
+                <input type="radio" id="aRadio" class="radio" name="type" value="admin">
+                <label class="lbl">Admin</label>
+                <p id="submitID>"><input type="submit" value="log in" class="btn btn-primary btn-block btn-large"/></p>
+             </form>
+            <div id="error-placeholder" class="alert-danger" role="alert"></div>
+        </div>
+    </body>
+</html>
+

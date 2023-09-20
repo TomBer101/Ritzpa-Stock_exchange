@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet-mapping>
+        <servlet-name>LoginInServlet</servlet-name>
+        <url-pattern>/logIn</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginInServlet</servlet-name>
+        <servlet-class>servlets.LogInServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UsersListServlet</servlet-name>
+        <url-pattern>/usersList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsersListServlet</servlet-name>
+        <servlet-class>servlets.UsersListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StocksDataServlet</servlet-name>
+        <url-pattern>/stocksList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StocksDataServlet</servlet-name>
+        <servlet-class>servlets.StocksDataServlets</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IssueStockServlet</servlet-name>
+        <url-pattern>/pages/brokerHomePage/IssueStock</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IssueStockServlet</servlet-name>
+        <servlet-class>servlets.IssueStockServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserDataServlet</servlet-name>
+        <url-pattern>/userData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserDataServlet</servlet-name>
+        <servlet-class>servlets.UserDataServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChargeMoneyServlet</servlet-name>
+        <url-pattern>/pages/brokerHomePage/chargeMoney</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChargeMoneyServlet</servlet-name>
+        <servlet-class>servlets.ChargeMoneyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>uploadFileServlet</servlet-name>
+        <url-pattern>/pages/brokerHomePage/uploadFile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>uploadFileServlet</servlet-name>
+        <servlet-class>servlets.FileUploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StockInfoUpdateAdminServlet</servlet-name>
+        <url-pattern>/adminStockPageUpdateData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StockInfoUpdateAdminServlet</servlet-name>
+        <servlet-class>servlets.StockInfoUpdateAdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StockInfo4Broker</servlet-name>
+        <url-pattern>/stockData4Broker</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StockInfo4Broker</servlet-name>
+        <servlet-class>servlets.StockInfoUpdateBrokerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MakeCommand</servlet-name>
+        <url-pattern>/pages/brokerStockPage/makeCommand</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MakeCommand</servlet-name>
+        <servlet-class>servlets.MakeCommandServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>stockInfoServlet</servlet-name>
+        <url-pattern>/pages/adminHomePage/StockInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>stockInfoServlet</servlet-name>
+        <servlet-class>servlets.StockInfoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>stockInfoServlet2</servlet-name>
+        <url-pattern>/pages/brokerHomePage/StockInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>stockInfoServlet2</servlet-name>
+        <servlet-class>servlets.StockInfoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Chat</servlet-name>
+        <url-pattern>/chatList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Chat</servlet-name>
+        <servlet-class>servlets.ChatServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SendChatServlet</servlet-name>
+        <url-pattern>/pages/adminHomePage/sendChat</url-pattern>
+        <url-pattern>/pages/brokerHomePage/sendChat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendChatServlet</servlet-name>
+        <servlet-class>servlets.SendChatServlet</servlet-class>
+    </servlet>
+
+
+
+    <servlet-mapping>
+        <servlet-name>AlertDataServlet</servlet-name>
+        <url-pattern>/alertData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AlertDataServlet</servlet-name>
+        <servlet-class>servlets.CheckForAlert</servlet-class>
+    </servlet>
+
+
+
+</web-app>

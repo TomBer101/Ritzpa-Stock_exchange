@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ritzpa Stock Exchange</title>
+
+    <script src="../../jquery-2.0.3.min.js"></script>
+    <script src="../../utilsUI/contextPathHelper.js"></script>
+    <script src="brokerHomePage.js"></script>
+
+    <link rel="stylesheet" href="brokerHomePage2.css">
+</head>
+
+<body class="grid-container">
+
+
+<div class="header">
+    <h1 id="welcomeTitle" ></h1>
+</div>
+
+<div id="onlineUsersContainer" class="onlineUsers split">
+    <h2 class="opTitle">Online Users</h2>
+    <ul id="usersList"></ul>
+</div>
+
+<div class="chatContainer split">
+    <div id="chatTitleContainer">
+        <h4 id="chatTitle">Chat</h4>
+    </div>
+    <div id="chatarea" ></div>
+
+    <div class="col-xs-4">
+        <!-- The actual form through which you send data back to the user -->
+        <form id="chatform" method="POST" action="sendChat">
+            <input type="text" id="userstring" name="chatString"/>
+            <input type="submit" value="Send"/>
+        </form>
+    </div>
+</div>
+
+
+<div class="main">
+    <label>Current Currency: </label>
+    <label id="currentCurrency"></label><br>
+    <form id="chargeMoney" method="POST" action="chargeMoney">
+        <input type="number" id="moneyAmount" name="moneyAmount"/>
+        <input type="submit" value="load $"/>
+    </form>
+
+    <table id="userHistory" class="history">
+        <thead>
+        <tr>
+            <th>Type</th> <!-- buy/sell/load money-->
+            <th>Date</th>
+            <th>Amount</th>
+            <th>currency Before</th>
+            <th>currency After</th>
+            <th>symbol</th>
+        </tr>
+        </thead>
+        <tbody id="userHistoryTb"></tbody>
+    </table>
+
+
+    <button type="button" id="loadFileBtn" onclick="document.getElementById('uploadFileHolder').style.display='block'">Load File</button>
+    <button type="button" id="issueStock" onclick="document.getElementById('issueStockHolder').style.display='block'">Issue</button>
+
+    <div  id="issueStockHolder" style="display:none">
+        <form id="issueStockForm" method = "POST" action="IssueStock">
+            <label class="lbl">Company name: </label>
+            <input type="text" name="companyName" id="companyName"/><br>
+            <label class="lbl">Symbol: </label>
+            <input type="text" name="symbol" id="symbol"/><br>
+            <label class="lbl">Stocks amount: </label>
+            <input type="text" name="stocksAmount" id="stocksAmount"/><br>
+            <label class="lbl">Company value: </label>
+            <input type="text" name="companyValue" id="companyValue"/>
+            <button type="button" onclick= "document.getElementById('issueStockHolder').style.display='none'">Cancel</button>
+            <input type="submit" value="Issue"/>
+        </form><br>
+    </div>
+
+    <div id="uploadFileHolder" style="display:none">
+        <form id="uploadFileForm" action="uploadFile" method="POST" enctype="multipart/form-data">
+            <input type="file"  name="myFile" accept=".xml"><br>
+            <input type="Submit" value="Upload File"><br>
+            <button type="button" onclick= "document.getElementById('uploadFileHolder').style.display='none'">Cancel</button>
+        </form>
+    </div>
+    <div id="error-holder"></div>
+</div>
+
+<br>
+
+<div class="split right ">
+    <div id="stocks" class="stocksInf">
+        <h2 class="opTitle">Stocks Information</h2>
+        <ul id="stocksList">
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>

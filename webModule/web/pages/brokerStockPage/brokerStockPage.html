@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ritzpa Stock Exchange</title>
+    <script src="../../jquery-2.0.3.min.js"></script>
+    <script src="../../utilsUI/contextPathHelper.js"></script>
+    <script src="canvasjs.min.js"></script>
+    <script src="brokerStockPage.js"></script>
+
+    <link rel="stylesheet" href="brokerStockPage.css">
+
+</head>
+
+<body>
+
+<div id="grid-container">
+
+    <!-------- HEADER ------->
+    <span id="header">
+        <div class="mainTitle">
+      <h1 id="mainTitle">Welcome Tom</h1>
+    </div>
+        <div id="digitalClock"></div>
+    </span>
+
+    <!-- SUBTITLE -------->
+    <div class="stockData" id="symbolContainer"></div>
+    <div class="stockData" id="companyNameContainer"></div>
+    <div class="stockData" id="valueContainer"></div>
+    <div class="stockData" id="cycleContainer"></div>
+
+    <div id="myHolds">
+        <label class="lbl">Your share of this stock: </label>
+        <span id="amount"></span>
+    </div>
+
+    <!------- STOCK TRANSACTIONS ------->
+    <div class="tableContainer">
+        <table id="transactionHistory">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="transactionHistoryTb"></tbody>
+        </table>
+    </div>
+
+    <!----------- MAKE COMMAND ------------->
+    <br>
+    <div class="makeCommandHolder">
+    <!--<button type="button" id="Make Command" onclick="document.getElementById('makeCommandHolder').style.display='block'">Make Command</button>-->
+    <div id="makeCommandHolder" >
+        <form id="makeCommandForm" method="POST" action="makeCommand">
+            <label class="lbl">Would you like to buy or sell?</label><br>
+            <input type="radio" id="bRadio" name="way" value="BUY" required/>
+            <label class="lbl">Buy</label>
+            <input type="radio" id="sRadio" name="way" value="SELL"/>
+            <label class="lbl">Sell</label><br>
+
+            <label class="lbl">Choose command type</label><br>
+            <input type="radio" id="lmt" name="type" value="LMT" onclick="enableLimit()" required/>
+            <label class="lbl">LMT</label>
+            <input type="radio" id="mkt" name="type" value="MKT" onclick="disableLimit()"/>
+            <label class="lbl">MKT</label>
+            <input type="radio" id="fok" name="type" value="FOK" onclick="enableLimit()"/>
+            <label class="lbl">FOK</label>
+            <input type="radio" id="ioc" name="type" value="IOC" onclick="enableLimit()"/>
+            <label class="lbl">IOC</label><br>
+            <span>
+                Stock Amount:
+                <input type="number" id="stockAmount" name="stockAmount" min="1" required>
+            </span>
+
+            <div id="limitField">Price Limit:
+                <input type="number" id="priceLimit" name="priceLimit" min="0" required/>
+            </div>
+
+<!--            <button type="button" onclick= "document.getElementById('makeCommandHolder').style.display='none'">Cancel</button>-->
+            <input type="submit" value="Commit"/>
+        </form>
+    </div>
+    </div>
+
+    <div class="makeCommandRes">
+        <h4 style="font-size: 16px">Command Results</h4>
+        <div id="msg-holder"></div>
+
+        <div id="commandRes" >
+            <ul id="currTrades"></ul>
+        </div>
+    </div>
+
+    <!------------ CHART CONTAINER -------->
+    <div id="stockChartHolder"></div>
+
+    <!--------- GO BACK --------------------->
+    <div class="backContainer">
+        <form>
+        <input type="button" value="Go back!" onclick="window.location.replace('/webModule_Web_exploded/pages/brokerHomePage/brokerHomePage.html');">
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
